@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_drag"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.zhe.myapplication.DragActivity">
+
+    <LinearLayout
+        android:id="@+id/action_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/add_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Item" />
+    </LinearLayout>
+
+    <com.zhe.myapplication.DragLayout
+        android:id="@+id/drag_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/action_layout"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:background="@drawable/shape_drag_view_bg"
+            android:gravity="center"
+            android:text="Just Test one" />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:background="@drawable/shape_drag_view_bg"
+            android:gravity="center"
+            android:text="Just Test Tow" />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:background="@drawable/shape_drag_view_bg"
+            android:gravity="center"
+            android:text="Just Test Three" />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:background="@drawable/shape_drag_view_bg"
+            android:gravity="center"
+            android:text="Just Test Four" />
+    </com.zhe.myapplication.DragLayout>
+
+</RelativeLayout>

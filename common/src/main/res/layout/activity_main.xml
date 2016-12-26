@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.zhe.myapplication.MainActivity">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/show_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/take_photo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Check Picture" />
+
+            <Button
+                android:id="@+id/cut_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Auto Cut Image" />
+
+            <Button
+                android:id="@+id/file_explorer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="File Explorer" />
+
+            <Button
+                android:id="@+id/alert_dialog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Alert Dialog" />
+
+            <Button
+                android:id="@+id/custom_dialog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Custom Dialog" />
+
+            <Button
+                android:id="@+id/drag_activity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Drag Activity" />
+
+            <Button
+                android:id="@+id/data_activity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Data Activity" />
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</LinearLayout>
