@@ -62,6 +62,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Data Activity" />
+
+            <Button
+                android:id="@+id/repeat_activity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Data Activity" />
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 </LinearLayout>

@@ -19,4 +19,16 @@
         android:layout_height="wrap_content"
         android:text="POST_MAP_DATA" />
 
+    <Button
+        android:id="@+id/post_file_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="POST_FILE_DATA" />
+
+    <Button
+        android:id="@+id/post_file_list_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="POST_FILE_LIST_DATA" />
+
 </LinearLayout>

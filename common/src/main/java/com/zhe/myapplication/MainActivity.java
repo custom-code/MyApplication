@@ -12,7 +12,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import com.zhe.myapplication.R;
 import com.zhe.myapplication.done.async.DialogProcessHandler;
 import com.zhe.myapplication.done.util.CutImageUtil;
 import com.zhe.myapplication.done.util.DisplayUtils;
@@ -36,6 +35,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button customDialog;
     private Button dragActivity;
     private Button dataActivity;
+    private Button repeatActivity;
     private ArrayList<String> photos;
     private CutImageUtil cutImageUtil;
     private Context mContext;
@@ -64,6 +64,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         showImage = (ImageView) findViewById(R.id.show_image);
         dragActivity = (Button) findViewById(R.id.drag_activity);
         dataActivity = (Button) findViewById(R.id.data_activity);
+        repeatActivity = (Button) findViewById(R.id.repeat_activity);
         takePhoto.setOnClickListener(this);
         cutImage.setOnClickListener(this);
         fileExplorer.setOnClickListener(this);
@@ -71,6 +72,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         customDialog.setOnClickListener(this);
         dragActivity.setOnClickListener(this);
         dataActivity.setOnClickListener(this);
+        repeatActivity.setOnClickListener(this);
     }
 
     @Override
@@ -97,16 +99,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.drag_activity: {
                 Intent intent = new Intent();
-                intent.setClass(mContext, com.zhe.myapplication.DragActivity.class);
+                intent.setClass(mContext, DragActivity.class);
                 startActivity(intent);
                 break;
             }
             case R.id.data_activity: {
                 Intent intent = new Intent();
-                intent.setClass(mContext, com.zhe.myapplication.DataActivity.class);
+                intent.setClass(mContext, DataActivity.class);
+                intent.putStringArrayListExtra("path", photos);
                 startActivity(intent);
+                break;
             }
-            break;
+            case R.id.repeat_activity: {
+                Intent intent = new Intent();
+                intent.setClass(mContext, RepeatActivity.class);
+                startActivity(intent);
+                break;
+            }
         }
     }
 

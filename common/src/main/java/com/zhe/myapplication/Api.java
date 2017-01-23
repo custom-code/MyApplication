@@ -7,7 +7,9 @@ public class Api {
     private static final Object monitor = new Object();
     private static Api mApi;
     private DataRetrofitClient mMainRetrofitClient;
+    private FileRetrofitClient mFileRetrofitClient;
     private final String baseUrl = "https://appuat.yaok.com/appapi/";
+    private final String fileUrl = "https://appuat.yaok.com/uploadapi/";
 
     public static Api getInstance() {
         synchronized (monitor) {
@@ -23,5 +25,12 @@ public class Api {
             mMainRetrofitClient = new DataRetrofitClient(baseUrl);
         }
         return mMainRetrofitClient;
+    }
+
+    public FileRetrofitClient getFileRetrofitClient() {
+        if (mFileRetrofitClient == null) {
+            mFileRetrofitClient = new FileRetrofitClient(fileUrl);
+        }
+        return mFileRetrofitClient;
     }
 }

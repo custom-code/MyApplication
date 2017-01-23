@@ -1,14 +1,14 @@
 package com.zhe.myapplication.done.http;
 
 
-import com.zhe.myapplication.BaseApplication;
-import com.zhe.myapplication.done.http.interceptor.OnOffLineCachedInterceptor;
-import com.zhe.myapplication.done.http.interceptor.UserAgentInterceptor;
 import com.facebook.stetho.okhttp3.StethoInterceptor;
 import com.franmontiel.persistentcookiejar.ClearableCookieJar;
 import com.franmontiel.persistentcookiejar.PersistentCookieJar;
 import com.franmontiel.persistentcookiejar.cache.SetCookieCache;
 import com.franmontiel.persistentcookiejar.persistence.SharedPrefsCookiePersistor;
+import com.zhe.myapplication.BaseApplication;
+import com.zhe.myapplication.done.http.interceptor.OnOffLineCachedInterceptor;
+import com.zhe.myapplication.done.http.interceptor.UserAgentInterceptor;
 
 import java.util.concurrent.TimeUnit;
 
@@ -24,9 +24,9 @@ enum OkHttpFactory {
     INSTANCE;
 
     private final OkHttpClient okHttpClient;
-    private final long TIMEOUT_READ = 25;
-    private final long TIMEOUT_CONNECTION = 25;
-    private final long TIMEOUT_WRITE = 25;
+    private final long TIMEOUT_READ = 5;
+    private final long TIMEOUT_CONNECTION = 5;
+    private final long TIMEOUT_WRITE = 5;
 
     OkHttpFactory() {
 
@@ -46,7 +46,7 @@ enum OkHttpFactory {
                 .addInterceptor(new UserAgentInterceptor(HttpHelper.getUserAgent())) // 添加UA
                 .addInterceptor(new OnOffLineCachedInterceptor()) // 走缓存，两个都要设置
                 .addNetworkInterceptor(new OnOffLineCachedInterceptor())
-                .addNetworkInterceptor(new StethoInterceptor()) //stetho,可以在chrome中查看请求
+                .addNetworkInterceptor(new StethoInterceptor()) // stetho,可以在chrome中查看请求
                 .cache(cache) // 必须是设置Cache目录
                 .retryOnConnectionFailure(true) // 失败重连
                 .connectTimeout(TIMEOUT_CONNECTION, TimeUnit.SECONDS)
